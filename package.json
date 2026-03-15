@@ -1,0 +1,56 @@
+{
+  "name": "openclaw-feishu-email-tools",
+  "version": "2026.3.16",
+  "description": "Installer CLI for openclaw-feishu-email",
+  "author": "VegeChou <weizhi0213@gmail.com>",
+  "keywords": [
+    "openclaw",
+    "feishu",
+    "installer",
+    "cli",
+    "plugin"
+  ],
+  "homepage": "https://github.com/VegeChou/openclaw-feishu-email-tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VegeChou/openclaw-feishu-email-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VegeChou/openclaw-feishu-email-tools/issues"
+  },
+  "type": "module",
+  "bin": {
+    "openclaw-feishu-email-tools": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "packageManager": "npm@10",
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/index.js",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "npm run typecheck",
+    "test": "npm run build && node --test tests/**/*.test.mjs",
+    "prepublishOnly": "npm run lint && npm run test"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "chalk": "^5.4.1",
+    "commander": "^14.0.1",
+    "fs-extra": "^11.3.2",
+    "inquirer": "^12.9.6"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.3.1",
+    "typescript": "^5.8.3"
+  }
+}
